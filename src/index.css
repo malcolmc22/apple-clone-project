@@ -1,0 +1,4 @@
+/* delete everything and only have these three directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
