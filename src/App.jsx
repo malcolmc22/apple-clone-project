@@ -1,11 +1,15 @@
 import React from "react"
+import Navbar from "./components/Navbar"
+import Hero from "./components/Hero"
+import Highlights from "./components/Highlights"
 
 function App() {
   return (
-    <>
-    {/* this expands to react.createElement, so the react variable must be in scope */}
-    <h1 className="text-3xl font-bold underline">testing this</h1>
-    </>
+    <main className="bg-black">
+      <Navbar />
+      <Hero />
+      <Highlights />
+    </main>
   )
 }
 
