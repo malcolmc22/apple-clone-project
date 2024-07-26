@@ -1,11 +1,11 @@
-
+import React from "react"
 
 function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-      init test real quick
-    </h1>
+    <>
+    {/* this expands to react.createElement, so the react variable must be in scope */}
+    <h1 className="text-3xl font-bold underline">testing this</h1>
+    </>
   )
 }
 
