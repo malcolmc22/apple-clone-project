@@ -4,7 +4,7 @@ import { useGSAP } from '@gsap/react'
 // npm install gsap @gsap/react to get gsap packages
 const Hero = () => {
   useGSAP(() => {
-
+    gsap.to('#hero', { opacity : 1, delay: 1.5})
   },[])
   // dependcy array at the end
   return (
@@ -12,7 +12,7 @@ const Hero = () => {
       {/* this pushes the highlights which means this section is taking full height of the screen */}
       <div className='flex-center h-5/6 w-full flex-col'>
       {/* hero title dissapears after adding the classname becauser in our index we have hero-tile with set attributes */}
-      <p className='hero-title'>iPhone 15 Pro</p>
+      <p id = 'hero' className='hero-title'>iPhone 15 Pro</p>
       </div>
     </section>
   )
