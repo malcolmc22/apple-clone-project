@@ -1,12 +1,29 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { heroVideo, smallHeroVideo } from '../utils'
 // npm install gsap @gsap/react to get gsap packages
 const Hero = () => {
+  // if the window is less than 760px it will be use smallherovideo, otherwise it will use herovideo
   const [videoSrc, setVideoSrc] = useState(window.innerWidth < 760 ? smallHeroVideo : heroVideo)
+  // making a function to check the width, and setting the video accordingly
+  const handleVideoSrcSet = () => {
+    if(window.innerWidth< 760) {
+      setVideoSrc(smallHeroVideo)
+    } else {
+      setVideoSrc(heroVideo)
+    }
+  }
+  // setting up our use effect so that it calls the handle function
+  useEffect(() => {
+    // listens for when the window is resized
+    window.addEventListener('resize', handleVideoSrcSet)
+    // to clean up event listeners return a function that removes them after
+    return () => {
+      window.removeEventListener('resize', handleVideoSrcSet)
+    }
+  }, [])
 
-  c
   useGSAP(() => {
     gsap.to('#hero', { opacity : 1, delay: 1.5})
   },[])
